@@ -2,13 +2,11 @@ import React, { useEffect } from 'react'
 
 import './index.css'
 
-import {
-  GetCdpEngine_cdpEngine,
-} from '../../types/graphqlQueryTypes'
+import { GetCdpEngine_cdpEngine } from '../../types/generatedGQL'
 
 type Props = {
-  data: GetCdpEngine_cdpEngine,
-  subscribeToChanges: () => void,
+  data: GetCdpEngine_cdpEngine
+  subscribeToChanges: () => void
 }
 
 function SummaryDetail(props: Props) {
