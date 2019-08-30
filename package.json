@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generateGQLTypes": "node scripts/generateGraphqlTypes.js"
+    "generateGQLTypes": "node scripts/generateGQLTypes.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,16 +51,14 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*.{ts,tsx,json,graphql,md}": [
-        "prettier --write",
-        "git add"
-      ],
-      "scr/**/*.{ts, tsx}": [
-        "eslint --fix",
-        "git add"
-      ]
-    }
+    "**/*.{ts,tsx,json,graphql,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "scr/**/*.{ts, tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "apollo": "^2.18.0",
