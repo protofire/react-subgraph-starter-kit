@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MakerDaoCdpEngine from '../MakerDaoCpdEngine'
+import ExampleMakerDaoCpdEngine from '../ExampleMakerDaoCpdEngine'
 
 import './index.css'
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <p>React Subgraph - starter kit</p>
-      <MakerDaoCdpEngine />
+      <ExampleMakerDaoCpdEngine />
     </div>
   )
 }
