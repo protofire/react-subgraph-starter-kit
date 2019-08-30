@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 
 import './index.css'
 
-function SummaryDetail(props) {
+import {
+  GetCdpEngine_cdpEngine,
+} from '../../types/graphqlQueryTypes'
+
+type Props = {
+  data: GetCdpEngine_cdpEngine,
+  subscribeToChanges: () => void,
+}
+
+function SummaryDetail(props: Props) {
   const { data, subscribeToChanges } = props
 
   useEffect(() => {
@@ -38,11 +46,6 @@ function SummaryDetail(props) {
       </div>
     </div>
   )
-}
-
-SummaryDetail.propTypes = {
-  data: PropTypes.object.isRequired,
-  subscribeToChanges: PropTypes.func.isRequired,
 }
 
 export default SummaryDetail

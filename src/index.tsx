@@ -9,7 +9,7 @@ import { client } from './apolloClientConfig'
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App networkInfo={{ network: process.env.REACT_APP_GRAPH_NETWORK }} />
+    <App />
   </ApolloProvider>,
   document.getElementById('root'),
 )

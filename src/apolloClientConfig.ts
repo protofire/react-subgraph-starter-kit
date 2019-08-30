@@ -12,7 +12,7 @@ const httpLink = new HttpLink({
 
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: process.env.REACT_APP_GRAPH_WS,
+  uri: process.env.REACT_APP_GRAPH_WS as string,
   options: {
     reconnect: true,
   },

@@ -18,7 +18,7 @@ const cdpEngineDetailFragment = gql`
 `
 
 const CDP_ENGINE_QUERY = gql`
-  {
+  query GetCdpEngine{
     cdpEngine(id: "0x0") {
       ...CdpEngineDetail
     }
@@ -27,7 +27,7 @@ const CDP_ENGINE_QUERY = gql`
 `
 
 const CDP_ENGINE_SUBSCRIPTION = gql`
-  subscription {
+  subscription CdpEngine {
     cdpEngine(id: "0x0") {
       ...CdpEngineDetail
     }
@@ -38,11 +38,11 @@ function MakerDaoCdpEngine() {
   const { subscribeToMore, ...result } = useQuery(CDP_ENGINE_QUERY)
 
   if (result.loading) {
-    return 'loading...'
+    return <div>loading...</div>
   }
 
   if (result.error) {
-    return 'ERROR: There was an error trying to fetch data!'
+    return <div>ERROR: There was an error trying to fetch data!</div>
   }
 
   return (
