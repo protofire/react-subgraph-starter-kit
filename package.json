@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generateTypes": "node scripts/generateGraphqlQueryTypes.js"
+    "generateGQLTypes": "node scripts/generateGraphqlTypes.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,12 +45,31 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn generateGQLTypes && git add ./src/types/generatedGQL.ts && yarn tsc && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.{ts,tsx,json,graphql,md}": [
+        "prettier --write",
+        "git add"
+      ],
+      "scr/**/*.{ts, tsx}": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
+  },
   "devDependencies": {
     "apollo": "^2.18.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
   }
 }
