@@ -1,12 +1,14 @@
 import React from 'react'
+
+import MakerDaoCdpEngine from '../MakerDaoCpdEngine'
+
 import './index.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>React Subgraph - starter kit</p>
-      </header>
+      <p>React Subgraph - starter kit</p>
+      <MakerDaoCdpEngine />
     </div>
   )
 }
